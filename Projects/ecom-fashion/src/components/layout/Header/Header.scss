@@ -1,0 +1,33 @@
+.Header {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-title {
+  color: gray;
+  text-decoration: none;
+}
+
+.auth_container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 58px;
+}
+
+.signin-btn {
+  color: gray;
+  text-decoration: none;
+}
+
+.signup-btn {
+  background: black;
+  border-radius: 10px;
+  padding: 14px 28px;
+  color: #fff;
+  text-decoration: none;
+}
