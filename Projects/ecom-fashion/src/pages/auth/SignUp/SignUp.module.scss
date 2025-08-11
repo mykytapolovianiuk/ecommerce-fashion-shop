@@ -6,10 +6,11 @@ $black: #000;
 $shadow: 0 24px 60px rgba(0,0,0,.08);
 
 .auth {
-  padding: 48px 24px 80px;
+  padding: 200px 24px 80px;
   display: grid;
   place-items: center;
   background: #fff;
+  font-family: Poppins, serif;
 }
 
 .auth__wrap {

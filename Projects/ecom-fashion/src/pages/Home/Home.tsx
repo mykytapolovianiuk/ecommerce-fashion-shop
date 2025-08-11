@@ -1,7 +1,7 @@
 import Header from "../../components/layout/Header/Header.tsx";
 import Footer from "../../components/layout/Footer/Footer.tsx";
 import DiscountTimer from "../../components/DiscountTimer.tsx";
-
+import PeakyBlinders from "../../components/layout/product-spotlight/PeakyBlinders.tsx";
 
 import styles from './Home.module.scss'
 
@@ -251,6 +251,7 @@ const Home = () => {
           <button className={styles.arrivals__more}>View More</button>
         </div>
       </section>
+      <PeakyBlinders />
       <Footer />
     </div>
   );
