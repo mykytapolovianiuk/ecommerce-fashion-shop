@@ -2,6 +2,7 @@ import Header from "../../components/layout/Header/Header.tsx";
 import Footer from "../../components/layout/Footer/Footer.tsx";
 import DiscountTimer from "../../components/DiscountTimer.tsx";
 
+
 import styles from './Home.module.scss'
 
 import frame1 from '../../assets/images/Home/heroSection/Frame 1.jpg'

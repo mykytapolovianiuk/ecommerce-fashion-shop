@@ -1,9 +1,5 @@
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import {Link} from "react-router-dom";
+
 
 import './Header.scss'
 const Header = () => {
@@ -12,8 +8,8 @@ const Header = () => {
       <h1 className='volkhov-regular'>FASCO</h1>
       <a className="home-title poppins-regular" href='#'>Home</a>
       <div className="auth_container">
-        <a className="signin-btn poppins-regular" href="#">Sign In</a>
-        <a className="signup-btn poppins-regular" href="#">Sign Up</a>
+        <Link to="/signin" className="signin-btn poppins-regular">Sign In</Link>
+        <Link to="/signup" className="signup-btn poppins-regular">Sign Up</Link>
       </div>
     </div>
   )
