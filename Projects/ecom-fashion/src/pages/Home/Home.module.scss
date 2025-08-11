@@ -7,6 +7,9 @@ $gray-400: #bdbdbd;
 $muted: #6f6f6f;
 $bg: #f7f7f7;
 $shadow: 0 10px 18px rgba(0,0,0,.08);
+$card-w: 386px;
+$card-h: 438px;
+$thumb-h: 236px;
 
 * { box-sizing: border-box; }
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -89,8 +92,9 @@ a { text-decoration: none; color: inherit; }
     border-radius: 10px;
     background: $black;
     color: #fff;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
+    font-family: Poppins, serif;
     letter-spacing: .06em;
     transition: transform .15s ease, opacity .15s ease;
   }
@@ -118,11 +122,14 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: 1.1fr 1.4fr;
   column-gap: $gap;
   align-items: center;
+  background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
+
 }
 
 .discount__information {
   display: grid;
   row-gap: 28px;
+
 }
 
 .discount__text { max-width: 420px; }
@@ -137,22 +144,27 @@ a { text-decoration: none; color: inherit; }
 
 .discount__subtitle {
   margin: 0 0 18px;
-  color: $muted;
-  line-height: 1.6;
+  color: #8A8A8A;
+  font-family: Poppins, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
 }
 
 .discount__btn {
   display: inline-grid;
   place-items: center;
-  height: 44px;
-  padding: 0 28px;
+  height: 56px;
+  padding: 0 60px;
   border: 0;
   border-radius: 10px;
   background: #000;
   color: #fff;
-  font-weight: 700;
   cursor: pointer;
   box-shadow: 0 8px 16px rgba(0,0,0,.12);
+  font-family: Poppins, serif;
+  font-weight: 400;
 }
 
 .discount__timerTitle {
@@ -160,6 +172,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 20px;
   font-weight: 700;
   color: $black;
+  font-family: Poppins, serif;
 }
 
 .discount__timerRow {
@@ -167,6 +180,7 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: repeat(4, 86px);
   gap: 18px;
   align-items: start;
+  font-family: DigitalNumbers-Regular, serif;
 }
 
 .discount__timerItem { text-align: center; }
@@ -177,8 +191,8 @@ a { text-decoration: none; color: inherit; }
   box-shadow: $shadow;
   padding: 12px 0;
   font-size: 28px;
-  font-weight: 800;
   letter-spacing: .08em;
+  font-family: "Digital Numbers", serif;
 }
 
 .discount__label {
@@ -213,24 +227,25 @@ a { text-decoration: none; color: inherit; }
   left: 20px;
   bottom: 20px;
   background: #fff;
-  padding: 14px 16px;
-  border-radius: 6px;
+  padding: 16px 24px;
   box-shadow: $shadow;
   display: grid;
   row-gap: 6px;
+  font-family: Poppins, serif;
 
-  span { color: $muted; font-size: 12px; }
-  strong { font-size: 18px; }
+  span { color: $muted; font-size: 12px; font-family: Poppins, serif; }
+  strong { font-size: 24px; font-family: Poppins, serif;
+    font-weight: 400;}
 }
 
 .arrivals {
   max-width: $container;
   margin: 0 auto;
   padding: 72px 24px 90px;
+  font-family: Poppins, serif;
 }
 
 .arrivals__head {
-  max-width: 720px;
   margin: 0 auto 28px;
   text-align: center;
 }
@@ -241,6 +256,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.2;
   font-weight: 700;
   color: $black;
+  font-family: volkhov-regular, serif;
 }
 
 .arrivals__desc {
@@ -257,69 +273,70 @@ a { text-decoration: none; color: inherit; }
   padding: 6px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  margin: 0 auto;
 }
-
 .arrivals__tab {
   border: 0;
-  padding: 10px 18px;
+  width: 207px;
+  height: 56px;
   border-radius: 10px;
   background: #f3f3f3;
   color: #333;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   transition: transform .15s ease, background .15s ease, color .15s ease;
-
   &:hover { transform: translateY(-1px); }
+  font-family: Poppins, serif;
 }
+.arrivals__tab--active { background: $black; color: #fff; }
 
-.arrivals__tab--active {
-  background: $black;
-  color: #fff;
-}
-
+/* сітка під точну ширину карток */
 .arrivals__grid {
   margin-top: 26px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, $card-w);
   gap: 26px;
+  justify-content: space-between; /* щоб рівно розкласти 3 картки в контейнері */
 }
 
+/* картка 386×438, тінь як у Figma, радіус 10 */
 .arrivals__card {
+  width: $card-w;
+  height: $card-h;
   background: #fff;
-  border-radius: 14px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: $shadow;
+  box-shadow: 0 40px 90px rgba(0,0,0,.06);
   transition: transform .18s ease, box-shadow .18s ease;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 18px 34px rgba(0,0,0,.1);
+    box-shadow: 0 48px 110px rgba(0,0,0,.08);
   }
 }
 
+/* верхнє зображення фіксованої висоти */
 .arrivals__thumb {
-  height: 220px;
+  height: $thumb-h;
   background: $gray-50;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
 
+/* контент із внутрішнім відступом 10px */
 .arrivals__body {
-  padding: 16px 18px 18px;
+  padding: 10px;
   display: grid;
   gap: 8px;
 }
 
 .arrivals__name {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  color: $black;
+  color: #484848;
+  font-family: Poppins, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0;
 }
 
 .arrivals__meta {
@@ -328,22 +345,10 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   align-items: center;
 }
+.arrivals__brand { font-size: 12px; color: $muted; }
+.arrivals__rating { color: #ff9c2a; letter-spacing: 2px; font-size: 14px; }
 
-.arrivals__brand {
-  font-size: 12px;
-  color: $muted;
-}
-
-.arrivals__rating {
-  color: #ff9c2a;
-  letter-spacing: 2px;
-  font-size: 14px;
-}
-
-.arrivals__reviews {
-  font-size: 12px;
-  color: $muted;
-}
+.arrivals__reviews { font-size: 12px; color: #484848; font-family: Poppins, serif}
 
 .arrivals__footer {
   display: grid;
@@ -352,35 +357,27 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   margin-top: 6px;
 }
-
-.arrivals__price {
-  font-weight: 800;
-  color: $black;
-}
-
-.arrivals__low {
-  color: #ff4d4f;
-  font-size: 12px;
-}
+.arrivals__price { font-weight: 400; color: $black; font-family: Poppins, serif;
+  font-size: 24px; }
+.arrivals__low { color: #ff4d4f; font-size: 12px; font-family: Poppins, serif }
 
 .arrivals__actions {
   display: grid;
   place-items: center;
   margin-top: 28px;
 }
-
 .arrivals__more {
   border: 0;
   background: $black;
   color: #fff;
-  height: 44px;
-  padding: 0 26px;
+  height: 56px;
+  padding: 0 55px;
   border-radius: 12px;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: Poppins, serif;
   box-shadow: 0 10px 20px rgba(0,0,0,.12);
   cursor: pointer;
   transition: transform .15s ease, opacity .15s ease;
-
   &:hover { transform: translateY(-1px); opacity: .92; }
   &:active { transform: translateY(0); opacity: .86; }
 }

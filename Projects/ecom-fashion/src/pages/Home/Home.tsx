@@ -15,6 +15,17 @@ import part3 from '../../assets/images/Home/pertnersSection/logo-03.png'
 import part4 from '../../assets/images/Home/pertnersSection/logo-04.png'
 import part5 from '../../assets/images/Home/pertnersSection/logo-05.png'
 
+import deals01 from '../../assets/images/Home/dealsSection/image-01.png'
+import deals02 from '../../assets/images/Home/dealsSection/image-02.png'
+import deals03 from '../../assets/images/Home/dealsSection/image-03.png'
+
+import arrivals1 from '../../assets/images/Home/arrivalsSection/img-01.png'
+import arrivals2 from '../../assets/images/Home/arrivalsSection/img-02.png'
+import arrivals3 from '../../assets/images/Home/arrivalsSection/img-03.png'
+import arrivals4 from '../../assets/images/Home/arrivalsSection/img-04.png'
+import arrivals5 from '../../assets/images/Home/arrivalsSection/img-05.png'
+import arrivals6 from '../../assets/images/Home/arrivalsSection/img-06.png'
+
 const Home = () => {
   return (
     <div className="Home">
@@ -78,7 +89,7 @@ const Home = () => {
         <div className={styles.discount__media}>
           <div className={styles.discount__card}>
             <img
-              src="https://images.pexels.com/photos/7679729/pexels-photo-7679729.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src={deals01}
               alt=""/>
             <div className={styles.discount__badge}>
               <span>01 — Spring Sale</span>
@@ -87,12 +98,12 @@ const Home = () => {
           </div>
           <div className={styles.discount__card}>
             <img
-              src="https://images.pexels.com/photos/7679725/pexels-photo-7679725.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src={deals02}
               alt=""/>
           </div>
           <div className={styles.discount__card}>
             <img
-              src="https://images.pexels.com/photos/7679719/pexels-photo-7679719.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src={deals03}
               alt=""/>
           </div>
         </div>
@@ -117,7 +128,7 @@ const Home = () => {
           <article className={styles.arrivals__card}>
             <div className={styles.arrivals__thumb}>
               <img
-                src="https://images.pexels.com/photos/7679727/pexels-photo-7679727.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={arrivals1}
                 alt="Shiny Dress"/>
             </div>
             <div className={styles.arrivals__body}>
@@ -137,7 +148,7 @@ const Home = () => {
           <article className={styles.arrivals__card}>
             <div className={styles.arrivals__thumb}>
               <img
-                src="https://images.pexels.com/photos/7679726/pexels-photo-7679726.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={arrivals2}
                 alt="Long Dress"/>
             </div>
             <div className={styles.arrivals__body}>
@@ -157,7 +168,7 @@ const Home = () => {
           <article className={styles.arrivals__card}>
             <div className={styles.arrivals__thumb}>
               <img
-                src="https://images.pexels.com/photos/7679725/pexels-photo-7679725.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={arrivals3}
                 alt="Full Sweater"/>
             </div>
             <div className={styles.arrivals__body}>
@@ -177,7 +188,7 @@ const Home = () => {
           <article className={styles.arrivals__card}>
             <div className={styles.arrivals__thumb}>
               <img
-                src="https://images.pexels.com/photos/5759217/pexels-photo-5759217.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={arrivals4}
                 alt="White Dress"/>
             </div>
             <div className={styles.arrivals__body}>
@@ -197,7 +208,7 @@ const Home = () => {
           <article className={styles.arrivals__card}>
             <div className={styles.arrivals__thumb}>
               <img
-                src="https://images.pexels.com/photos/7679719/pexels-photo-7679719.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={arrivals5}
                 alt="Colorful Dress"/>
             </div>
             <div className={styles.arrivals__body}>
@@ -217,7 +228,7 @@ const Home = () => {
           <article className={styles.arrivals__card}>
             <div className={styles.arrivals__thumb}>
               <img
-                src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={arrivals6}
                 alt="White Shirt"/>
             </div>
             <div className={styles.arrivals__body}>
