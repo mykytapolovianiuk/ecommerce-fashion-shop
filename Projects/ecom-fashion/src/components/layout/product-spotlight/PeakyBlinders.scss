@@ -1,6 +1,5 @@
 .peaky {
   background: #f9f9f9;
-  padding: 40px 0;
   font-family: Poppins, serif;
 }
 
@@ -50,8 +49,7 @@
   grid-column: 1 / -1;
   width: 100%;
   background: #fff;
-  padding: 28px 40px;
-  box-shadow: 0 24px 60px rgba(0,0,0,.08);
+  padding: 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
