@@ -2,6 +2,7 @@ import Header from "../../components/layout/Header/Header.tsx";
 import Footer from "../../components/layout/Footer/Footer.tsx";
 import DiscountTimer from "../../components/DiscountTimer.tsx";
 import PeakyBlinders from "../../components/layout/product-spotlight/PeakyBlinders.tsx";
+import Instagram from "../../components/layout/Instagram/Instagram.tsx";
 
 import styles from './Home.module.scss'
 
@@ -252,6 +253,7 @@ const Home = () => {
         </div>
       </section>
       <PeakyBlinders />
+      <Instagram />
       <Footer />
     </div>
   );
