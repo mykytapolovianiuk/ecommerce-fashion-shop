@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./NewsletterSubscribe.module.scss";
+import leftImg from "../../../assets/images/Home/subscribeSection/img-left.png";
+import rightImg from "../../../assets/images/Home/subscribeSection/img-right.png";
 import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = "service_z9bw5on";
@@ -42,6 +44,9 @@ const NewsletterSubscribe = () => {
   return (
     <section className={styles.subscribe}>
       <div className={styles.subscribe__container}>
+        <img src={leftImg} alt="" className={`${styles.subscribe__side} ${styles["subscribe__side--left"]}`} />
+        <img src={rightImg} alt="" className={`${styles.subscribe__side} ${styles["subscribe__side--right"]}`} />
+
         <h2 className={styles.subscribe__title}>Subscribe To Our Newsletter</h2>
         <p className={styles.subscribe__subtitle}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices sollicitudin

@@ -2,7 +2,7 @@ $container: 1200px;
 
 .subscribe {
   position: relative;
-  padding: 150px 0 150px;
+  padding: 400px 0 400px;
   color: #d4d4d4;
   overflow: hidden;
   font-family: Poppins, serif;
@@ -24,8 +24,8 @@ $container: 1200px;
   z-index: 0;
   filter: drop-shadow(0 40px 90px rgba(0,0,0,.6));
 }
-.subscribe__side--left  { left: 0; bottom: 0; transform: translateY(8px); }
-.subscribe__side--right { right: 0; bottom: 0; }
+.subscribe__side--left  { left: 0; bottom: -200px; transform: translateY(8px); }
+.subscribe__side--right { right: 0; bottom: -230px; }
 
 .subscribe__title {
   margin: 10px auto 12px;
@@ -73,6 +73,6 @@ $container: 1200px;
 
 .subscribe__msg {
   margin-top: 12px;
-  color: #c9c9c9;
+  color: #000;
   font-weight: 600;
 }
