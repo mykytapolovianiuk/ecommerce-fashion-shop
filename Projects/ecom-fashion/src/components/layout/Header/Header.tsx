@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { signOut } from "firebase/auth";
@@ -15,7 +14,9 @@ const Header = () => {
 
   return (
     <div className="Header">
-      <h1 className="volkhov-regular">FASCO</h1>
+      <Link to="/">
+        <h1 className="volkhov-regular">FASCO</h1>
+      </Link>
 
       {user ? (
         <>

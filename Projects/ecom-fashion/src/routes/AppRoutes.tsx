@@ -7,22 +7,24 @@ import Shop from "../pages/Shop/Shop.tsx";
 import Product from "../pages/Product/Product.tsx";
 import {CartProvider} from "../context/CartContext.tsx";
 import CartDrawer from "../../src/components/Cart/CartDrawer.tsx";
+import Checkout from "../pages/Checkout/Checkout.tsx";
 
 const AppRoutes = () => {
   return (
     <AuthProvider>
-      <CartProvider> {/* Змінено з CartContext на CartProvider */}
+      <CartProvider>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/shop' element={<Shop />} />
             <Route path="/product/:id" element={<Product />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path='/signin' element={<SignIn />} />
             <Route path='/signup' element={<SignUp />} />
           </Routes>
           <CartDrawer />
         </Router>
-      </CartProvider> {/* Змінено з CartContext на CartProvider */}
+      </CartProvider>
     </AuthProvider>
   );
 };

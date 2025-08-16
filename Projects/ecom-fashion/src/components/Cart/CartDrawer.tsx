@@ -1,4 +1,5 @@
 import { useCart } from "../../context/CartContext.tsx";
+import {Link} from "react-router-dom";
 import styles from "./CartDrawer.module.scss";
 
 const CartDrawer = () => {
@@ -56,7 +57,9 @@ const CartDrawer = () => {
             <span>Subtotal</span>
             <strong>{format(subtotal)}</strong>
           </div>
-          <button className={styles.checkout} disabled={!items.length}>Checkout</button>
+          <Link to='/checkout' className={styles.checkout}>
+            <button className={styles.checkout} disabled={!items.length}>Checkout</button>
+          </Link>
           <button className={styles.view}>View Cart</button>
           <div className={styles.note}>Free shipping for orders over {format(freeShippingThreshold)}</div>
         </footer>
