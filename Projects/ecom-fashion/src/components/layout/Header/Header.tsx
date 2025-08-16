@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase/firebase";
+import {useCart} from "../../../context/CartContext.tsx";
 import './Header.scss';
 
 import backet from '../../../assets/icons/headerSection/backet.svg'
 
 const Header = () => {
   const { user } = useAuth();
+  const { open, items } = useCart();
+  const count = items.reduce((s,i)=>s+i.qty,0);
 
   return (
     <div className="Header">
@@ -22,7 +25,8 @@ const Header = () => {
             <Link to="/products">Products</Link>
           </div>
           <button className="logout" onClick={() => signOut(auth)}>Logout</button>
-          <button className='header-backet__btn'>
+          <button onClick={open} aria-label="Cart" className='header-backet__btn'>
+            {count}
             <img className='header-backet__img' src={backet} alt="backet"/>
           </button>
         </>

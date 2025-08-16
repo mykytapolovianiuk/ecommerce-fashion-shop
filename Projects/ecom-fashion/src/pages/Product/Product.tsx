@@ -2,6 +2,7 @@ import {useEffect, useMemo, useState} from "react";
 import {useParams, Link} from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore";
 import {db} from "../../firebase/firebase";
+import { useCart } from "../../context/CartContext";
 import styles from "./Product.module.scss";
 import Header from "../../components/layout/Header/Header";
 import Footer from "../../components/layout/Footer/Footer";
@@ -32,6 +33,7 @@ const ProductPage = () => {
   const [size, setSize] = useState<string | null>(null);
   const [color, setColor] = useState<string | null>(null);
   const [qty, setQty] = useState(1);
+  const { add, open } = useCart();
 
   useEffect(() => {
     let alive = true;
@@ -92,6 +94,19 @@ const ProductPage = () => {
   }
 
   const gallery = data.images?.length ? data.images : [data.thumbnail || data.image || ""];
+  function handleAdd() {
+  if (!data) return;
+  const chosenPrice = data.salePrice ?? data.price;
+  add({
+    id: data.id,
+    title: data.title,
+    price: chosenPrice,
+    image: img || data.thumbnail || data.image,
+    variant: { size, color },
+    qty
+  });
+  open();
+}
 
   return (
     <div className={styles.page}>
@@ -161,7 +176,7 @@ const ProductPage = () => {
                 <input value={qty} onChange={(e)=>setQty(Math.max(1, Number(e.target.value)||1))}/>
                 <button onClick={()=>setQty(q => q+1)}>+</button>
               </div>
-              <button className={styles.add}>Add to cart</button>
+              <button className={styles.add} onClick={handleAdd}>Add to cart</button>
               <button className={styles.wish} aria-label="Add to wishlist">♡</button>
             </div>
 
