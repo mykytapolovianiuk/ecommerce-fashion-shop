@@ -10,6 +10,7 @@ import {
   type QueryDocumentSnapshot,
   type DocumentData,
 } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import { db } from "../../firebase/firebase.ts";
 import styles from "./Shop.module.scss";
 import Header from "../../components/layout/Header/Header.tsx";
@@ -19,6 +20,7 @@ import Instagram from "../../components/layout/Instagram/Instagram.tsx";
 import NewsletterSubscribe from "../../components/layout/NewsletterSubscribe/NewsletterSubscribe.tsx";
 
 type Product = {
+  image: string;
   id: string;
   title: string;
   brand: string;
@@ -192,31 +194,23 @@ const Shop: React.FC = () => {
             </div>
           </div>
         </aside>
-
-        <div className={styles.grid}>
-          {items
-            .filter((p) => (tags.length ? tags.some((t) => p.tags.includes(t)) : true))
-            .map((p) => (
-              <div key={p.id} className={styles.card}>
-                <div className={styles.card__thumb}>
-                  <img src={p.thumbnail} alt={p.title} />
-                </div>
-                <div className={styles.card__name}>{p.title}</div>
-                <div className={styles.card__meta}>{p.brand}</div>
-                <div className={styles.card__price}>
-                  {p.salePrice != null ? (
-                    <>
-                      <span className={styles.card__sale}>${p.salePrice.toFixed(2)}</span>
-                      <span className={styles.card__old}>${p.price.toFixed(2)}</span>
-                    </>
-                  ) : (
-                    <span>${p.price.toFixed(2)}</span>
-                  )}
-                </div>
-              </div>
-            ))}
-          {!items.length && !loading && <div className={styles.grid__empty}>No products</div>}
+<div className={styles.grid}>
+  {items
+    .filter(p => tags.length ? tags.some(t => p.tags.includes(t)) : true)
+    .map(p => (
+      <Link key={p.id} to={`/product/${p.id}`} className={styles.card}>
+        <div className={styles.card__thumb}><img src={p.thumbnail || p.image} alt="" /></div>
+        <div className={styles.card__name}>{p.title}</div>
+        <div className={styles.card__meta}>{p.brand}</div>
+        <div className={styles.card__price}>
+          {p.salePrice
+            ? (<><span className={styles.card__sale}>${p.salePrice.toFixed(2)}</span>
+                 <span className={styles.card__old}>${p.price.toFixed(2)}</span></>)
+            : <span>${p.price.toFixed(2)}</span>}
         </div>
+      </Link>
+    ))}
+</div>
       </div>
 
       <div className={styles.shop__actions}>

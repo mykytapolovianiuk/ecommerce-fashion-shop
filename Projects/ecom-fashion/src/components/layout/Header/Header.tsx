@@ -20,7 +20,6 @@ const Header = () => {
             <Link to="/">Home</Link>
             <Link to="/shop">Shop</Link>
             <Link to="/products">Products</Link>
-            <Link to="/pages">Pages</Link>
           </div>
           <button className="logout" onClick={() => signOut(auth)}>Logout</button>
           <button className='header-backet__btn'>
