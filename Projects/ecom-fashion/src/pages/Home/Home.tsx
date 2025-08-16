@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 import Header from "../../components/layout/Header/Header.tsx";
 import Footer from "../../components/layout/Footer/Footer.tsx";
 import Discount from "../Discount/Discount.tsx";
@@ -43,7 +45,7 @@ const Home = () => {
             <h1 className={styles.hero__heading}>ULTIMATE</h1>
             <p className={styles.hero__title}>SALE</p>
             <p className={styles.hero__subtitle}>NEW COLLECTION</p>
-            <a href="#" className={styles.hero__cta}>Shop now</a>
+            <Link to="/shop" className={styles.hero__cta}>Shop now</Link>
           </div>
 
           <figure className={`${styles.hero__media} ${styles["hero__media--large"]} ${styles["hero__media--right"]}`}>
@@ -202,7 +204,7 @@ const Home = () => {
         </div>
 
         <div className={styles.arrivals__actions}>
-          <button className={styles.arrivals__more}>View More</button>
+          <Link to="/shop" className={styles.arrivals__more}>View More</Link>
         </div>
       </section>
       <PeakyBlinders />

@@ -243,6 +243,9 @@ a { text-decoration: none; color: inherit; }
   margin-top: 28px;
 }
 .arrivals__more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 0;
   background: $black;
   color: #fff;

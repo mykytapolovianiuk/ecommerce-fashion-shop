@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 import styles from "./Discount.module.scss";
 import DiscountTimer from "../../components/DiscountTimer.tsx";
 
@@ -15,7 +17,7 @@ const Discount: React.FC = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam
             sem. Scelerisque duis ultrices sollicitudin
           </p>
-          <button className={styles.discount__btn}>Buy Now</button>
+          <Link to="/shop" className={styles.discount__btn}>Buy Now</Link>
         </div>
 
         <div className={styles.discount__timer}>
