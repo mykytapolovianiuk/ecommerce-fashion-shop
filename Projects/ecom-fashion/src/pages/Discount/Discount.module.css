@@ -1,0 +1,132 @@
+.discount {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  column-gap: 24px;
+  align-items: center;
+  background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
+}
+
+.discount__information {
+  display: grid;
+  row-gap: 28px;
+}
+
+.discount__text {
+  max-width: 420px;
+}
+
+.discount__title {
+  margin: 0 0 12px;
+  font-size: 42px;
+  line-height: 1.15;
+  color: #000;
+  font-weight: 700;
+}
+
+.discount__subtitle {
+  margin: 0 0 18px;
+  color: #8A8A8A;
+  font-family: Poppins, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
+.discount__btn {
+  display: inline-grid;
+  place-items: center;
+  height: 56px;
+  padding: 0 60px;
+  border: 0;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  font-family: Poppins, serif;
+  font-weight: 400;
+}
+
+.discount__timerTitle {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  font-family: Poppins, serif;
+}
+
+.discount__timerRow {
+  display: grid;
+  grid-template-columns: repeat(4, 86px);
+  gap: 18px;
+  align-items: start;
+  font-family: DigitalNumbers-Regular, serif;
+}
+
+.discount__timerItem {
+  text-align: center;
+}
+
+.discount__counter {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+  padding: 12px 0;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  font-family: "Digital Numbers", serif;
+}
+
+.discount__label {
+  margin-top: 10px;
+  color: #6f6f6f;
+  font-size: 14px;
+}
+
+.discount__media {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.discount__card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+.discount__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.discount__badge {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  background: #fff;
+  padding: 16px 24px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+  display: grid;
+  row-gap: 6px;
+  font-family: Poppins, serif;
+}
+.discount__badge span {
+  color: #6f6f6f;
+  font-size: 12px;
+  font-family: Poppins, serif;
+}
+.discount__badge strong {
+  font-size: 24px;
+  font-family: Poppins, serif;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=Discount.module.css.map */
