@@ -1,0 +1,65 @@
+.Header {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-title {
+  color: gray;
+  text-decoration: none;
+}
+
+.auth_container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 58px;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 50px;
+  font-family: Poppins, serif;
+  font-weight: 400;
+}
+
+.header-backet__btn {
+  background: transparent;
+  border: none;
+}
+
+.header-backet__img {
+  width: 20px;
+}
+
+.logout {
+  background: black;
+  border-radius: 10px;
+  padding: 12px 24px;
+  color: #fff;
+  text-decoration: none;
+  font-family: Poppins, serif;
+}
+
+.signin-btn {
+  color: gray;
+  text-decoration: none;
+  font-family: Poppins, serif;
+}
+
+.signup-btn {
+  background: black;
+  border-radius: 10px;
+  padding: 14px 28px;
+  color: #fff;
+  text-decoration: none;
+  font-family: Poppins, serif;
+}
+
+/*# sourceMappingURL=Header.css.map */

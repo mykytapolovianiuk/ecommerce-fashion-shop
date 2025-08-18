@@ -1,0 +1,185 @@
+div {
+  font-family: Poppins, serif;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 60;
+}
+
+.backdrop--show {
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 420px;
+  max-width: 92vw;
+  height: 100%;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.drawer--open {
+  transform: translateX(0);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.head h3 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.x {
+  border: 0;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.free {
+  padding: 12px 20px;
+  margin: 0;
+  background: #f7f7f7;
+}
+
+.free strong {
+  font-weight: 800;
+}
+
+.list {
+  overflow: auto;
+  padding: 10px 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 76px 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.thumb {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.info {
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.variant {
+  color: #777;
+  font-size: 13px;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.qty button {
+  width: 34px;
+  height: 36px;
+  border: 0;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+
+.qty span {
+  display: inline-block;
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.remove {
+  border: 0;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+}
+
+.empty {
+  padding: 40px 0;
+  text-align: center;
+  color: #666;
+}
+
+.foot {
+  border-top: 1px solid #eee;
+  padding: 16px 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.subrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.checkout {
+  height: 46px;
+  border: 0;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  font-weight: 800;
+}
+
+.view {
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-weight: 700;
+}
+
+.note {
+  color: #777;
+  font-size: 12px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=CartDrawer.module.css.map */
