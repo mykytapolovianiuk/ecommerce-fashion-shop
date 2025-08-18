@@ -9,17 +9,14 @@ import Footer from "../../components/layout/Footer/Footer";
 import styles from "./Checkout.module.scss";
 import { useCart } from "../../context/CartContext";
 
-// Завантажуємо Stripe
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string);
 
-// ---- Внутрішній компонент з формою платежу ----
 const CheckoutForm: React.FC = () => {
   const { items, subtotal, format, freeShippingThreshold, missingForFreeShipping, clear } = useCart();
   const stripe = useStripe();
   const elements = useElements();
   const functions = getFunctions();
 
-  // UI / форма з макета
   const [email, setEmail] = useState("");
   const [firstName, setFirst] = useState("");
   const [lastName, setLast] = useState("");
@@ -33,7 +30,6 @@ const CheckoutForm: React.FC = () => {
   const [error, setError] = useState("");
   const [applied, setApplied] = useState<null | { code: string; off: number }>(null);
 
-  // знижка (приклад логіки — 10%)
   function applyCode() {
     if (!discount) return;
     const code = discount.trim().toUpperCase();
@@ -72,7 +68,6 @@ const CheckoutForm: React.FC = () => {
     try {
       setSaving(true);
 
-      // 1) створюємо PaymentIntent через Callable
       const createPaymentIntent = httpsCallable(functions, "createPaymentIntent");
       const cents = Math.round(total * 100); // у центрах
       const { data } = await createPaymentIntent({
@@ -85,7 +80,6 @@ const CheckoutForm: React.FC = () => {
       });
       const clientSecret = (data as any).clientSecret;
 
-      // 2) підтверджуємо платіж
       const result = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement)!,
@@ -99,7 +93,6 @@ const CheckoutForm: React.FC = () => {
         return;
       }
 
-      // 3) зберегти замовлення у Firestore
       await addDoc(collection(db, "orders"), {
         customer: { email, firstName, lastName, country, city, zip, address },
         items: items.map(i => ({
@@ -124,7 +117,6 @@ const CheckoutForm: React.FC = () => {
       });
 
       clear();
-      // редірект/стан “вдячності”
       window.location.assign("/checkout/success");
     } catch (err: any) {
       console.error(err);
@@ -139,7 +131,7 @@ const CheckoutForm: React.FC = () => {
       <Header />
 
       <div className={styles.container}>
-        <h1 className={styles.pageTitle}>FASCO Demo Checkout</h1>
+        <h1 className={styles.pageTitle}>FASCO Checkout</h1>
 
         <div className={styles.grid}>
           {/* LEFT column */}
